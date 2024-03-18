@@ -1,0 +1,239 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app-timeline {
+  background: #202024;
+  display: flex;
+  height: 100%;
+  user-select: none;
+  flex-direction: column;
+}
+
+.app-timeline-toolbar {
+  padding: 0 12px;
+  height: 100%;
+  display: flex;
+}
+
+.app-timeline-toolbar__timings {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-timeline-timings {
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+}
+
+.app-timeline-timings__current {
+  font-weight: 600;
+  font-size: 12px;
+  color: rgba(255, 255, 255, .6);
+}
+
+.app-timeline-timings__delimiter {
+  margin: 0 7px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(255, 255, 255, .3);
+}
+
+.app-timeline-timings__total {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, .35);
+}
+
+.app-timeline__trackpad {
+  flex-grow: 1;
+  height: calc(100% - 41px);
+}
+
+app-timeline-trackpad {
+  position: relative;
+  user-select: none;
+  overflow-x: scroll;
+  overflow-y: auto;
+  height: 100%;
+  scrollbar-track-color: #202024;
+  scrollbar-face-color: #545459;
+  scrollbar-arrow-color: #545459;
+  scrollbar-highlight-color: #202024;
+  scrollbar-3dlight-color: #202024;
+  scrollbar-shadow-color: #202024;
+  scrollbar-darkshadow-color: #202024;
+  scrollbar-color: #545459 #202024;
+  scrollbar-width: thin;
+}
+
+.app-timeline-trackpad--sticky-supported .app-timeline-trackpad__sticky-box {
+  min-width: 100%;
+  position: sticky;
+  top: 0;
+  height: 0;
+  z-index: 2;
+}
+
+.app-timeline-trackpad__cursor {
+  position: absolute;
+  top: 1px;
+  width: 20px;
+  left: 20px;
+  z-index: 2;
+}
+
+.app-timeline-cursor {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  cursor: grab;
+}
+
+.app-timeline-cursor__stick {
+  width: 20px;
+  height: 17px;
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNiAwSDJhMiAyIDAgMDAtMiAydjEwLjJjMCAuNS4yIDEgLjYgMS40bDIgMmMuOC44IDIgLjggMi44IDBsMi0yYy40LS40LjYtLjkuNi0xLjRWMmEyIDIgMCAwMC0yLTJ6IiBmaWxsPSIjRERERERGIi8+PC9zdmc+) no-repeat center center;
+  background-size: 8px 17px;
+}
+
+.app-timeline-cursor__line {
+  flex-grow: 1;
+  width: 2px;
+  background: #dddddf;
+  margin-top: -2px;
+}
+
+.app-timeline-trackpad__cursor-alert {
+  padding: 3px 8px 3px 9px;
+  background: #dddddf;
+  box-shadow: 0 -2px 3px rgba(0,0,0,.08);
+  border-radius: 10px;
+  font-size: 11px;
+  line-height: 12px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  color: #151519;
+}
+
+.app-timeline-trackpad__ruler {
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  padding: 0 20px;
+  background: #202024;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.app-timeline-ruler {
+  display: flex;
+  cursor: grab;
+}
+
+.app-timeline-ruler__division {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-bottom: 5px;
+}
+
+.app-timeline-ruler__serif {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 6px;
+  background: rgba(255, 255, 255, .1);
+}
+
+.app-timeline-ruler__label {
+  margin-top: 1px;
+  padding: 0 3px;
+  transform: translateX(-50%);
+  font-size: 9px;
+  line-height: 1.5;
+  color: rgba(243, 233, 233, 0.25);
+}
+
+.app-timeline-trackpad__tracks {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 20px 0;
+  min-height: 100%;
+  user-select: none;
+}
+
+.app-track--large {
+@media (max-width: 991.98px) {
+    height: 40px;
+}
+}
+
+.app-track-element-container__content {
+  height: 100%;
+  min-width: 1px;
+}
+
+.app-drag-drop-element--drag-enabled {
+  cursor: grab;
+}
+
+.app-drag-drop-element {
+  width: 100%;
+  height: 100%;
+}
+
+.app-drag-drop-element__source {
+  width: 100%;
+  height: 100%;
+}
+
+app-track-element {
+  height: 100%;
+  cursor: pointer;
+}
+
